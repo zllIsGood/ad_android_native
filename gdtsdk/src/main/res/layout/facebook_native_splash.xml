@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.ads.NativeAdLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/UnifiedNativeAdView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_facebook">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_bg_countdown"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/splash_countdown_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_native_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/splash_title_txt"
+            app:layout_constraintBottom_toTopOf="@id/mv_native_mediaView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.facebook.ads.MediaView
+            android:id="@+id/mv_native_mediaView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_native_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_native_title" />
+
+        <TextView
+            android:id="@+id/tv_native_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/splash_desc_txt"
+            app:layout_constraintBottom_toTopOf="@id/btn_native_call_to_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mv_native_mediaView" />
+
+        <Button
+            android:id="@+id/btn_native_call_to_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bg_call_to_action"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/splash_button_txt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_native_desc" />
+
+    </android.support.constraint.ConstraintLayout>
+</com.facebook.ads.NativeAdLayout>

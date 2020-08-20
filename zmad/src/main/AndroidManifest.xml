@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.zmad">
+    <!-- 必要权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application >
+        <activity android:name=".WebActivity"></activity>
+
+        <activity
+            android:name=".ZmSplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".IncentiveActivity"/>
+    </application>
+
+</manifest>

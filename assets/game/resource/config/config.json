@@ -1,0 +1,18 @@
+{
+    "CoursePlay": [
+        "https://cdnzmg.zmfamily.cn/word/other/course_play1",
+        "https://cdnzmg.zmfamily.cn/word/other/course_play2",
+        "https://cdnzmg.zmfamily.cn/word/other/course_play3",
+        "https://cdnzmg.zmfamily.cn/word/other/course_play4"
+    ],
+    "HeroResult": {
+        "url": "assets/other/complete_paper",
+        "x": 0,
+        "y": 0
+    },
+    "hammer": {
+        "url": "assets/other/hammer",
+        "x": 0,
+        "y": 0
+    }
+}

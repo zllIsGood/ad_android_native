@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'walle'
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.zmfamily.word_cat_game"  //单词喵
+//        applicationId "com.zmfamily.word_cat_study"  //猫咪学单词
+//        applicationId "com.zmfamily.word_cat_cat_cat"  //单词喵喵喵
+//        applicationId "com.zmfamily.word_cat_cat"  //喵喵学单词
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 20
+        versionName "2.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters "x86", "armeabi", "armeabi-v7a"
+        }
+        //keytool -genkey -alias zhumeng_draw -keypass zhumeng2020 -keyalg RSA -keysize 2048 -validity 36500 -keystore zhumeng_draw.keystore  -storepass zhumeng2020
+        signingConfigs {
+            release {
+                storeFile file('zhumeng_draw.keystore')
+                storePassword "zhumeng2020"
+                keyAlias "zhumeng_draw"
+                keyPassword "zhumeng2020"
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+            debug {
+                signingConfig signingConfigs.release
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+        sourceSets {
+            main {
+                assets.srcDirs = ['../assets']
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+        buildToolsVersion '29.0.3'
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+
+    }
+}
+
+dependencies {
+    //implementation (name:'GDTSDK.unionNormal.4.232.1102', ext:'aar')
+    compile(name: 'egret', ext: 'aar')
+    compile(name: 'open_ad_sdk', ext: 'aar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    implementation "com.android.support:support-annotations:28.0.0"
+    implementation 'com.google.code.gson:gson:2.6.2'
+    compile 'com.umeng.umsdk:analytics:8.0.0'
+    compile 'com.umeng.umsdk:common:2.0.0'
+    //渠道包打包神器
+    implementation 'com.meituan.android.walle:library:1.1.6'
+
+    //基础组件库依赖(必须)
+    implementation 'com.umeng.umsdk:common:2.2.2'
+    implementation 'com.umeng.umsdk:utdid:1.5.2'
+
+    //友盟push相关依赖(必须)
+    implementation 'com.umeng.umsdk:push:6.0.5'
+
+    implementation 'com.umeng.umsdk:alicloud-httpdns:1.2.5'
+    implementation 'com.umeng.umsdk:alicloud-utils:1.1.5'
+    implementation 'com.umeng.umsdk:alicloud_beacon:1.0.1'
+
+    implementation 'com.umeng.umsdk:agoo-accs:3.3.8.8-open-fix2'
+    implementation 'com.umeng.umsdk:agoo_networksdk:3.5.5'
+    implementation 'com.umeng.umsdk:agoo_tlog:3.0.0.17'
+    implementation 'com.umeng.umsdk:agoo_tnet4android:3.1.14.9'
+    api project(':gdtsdk')
+    implementation project(path: ':zmad')
+    implementation ("com.github.bumptech.glide:glide:4.9.0") {
+        exclude group: "com.android.support"
+    }
+}
+
+//打包命令  ./gradlew clean assembleReleaseChannels
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("E:\\zll\\project\\word_ad_android\\outputs\\channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${channel}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("E:\\zll\\project\\word_ad_android\\channel")
+}

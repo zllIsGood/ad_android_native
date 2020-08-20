@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">单词喵</string>
+<!--    <string name="app_name">猫咪学单词</string>-->
+    <string name="i">i</string>
+    <string name="show_fullscreen_video">展示全屏视频广告</string>
+    <string name="load_vertical_fullscreen_video">加载竖版全屏视频广告</string>
+    <string name="load_horizontal_fullscreen_video">加载横版全屏视频广告</string>
+    <string name="main_sdk_version_tip">SDK Version %1$s</string>
+
+
+    <string name="slide_up_to_unlock">Slide up To Unlock</string>
+    <string name="release_to_unlock">Release to Unlock</string>
+    <string name="pull_canceled">Pull Canceled</string>
+</resources>

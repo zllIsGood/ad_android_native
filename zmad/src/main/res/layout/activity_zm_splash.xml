@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ZmSplashActivity">
+
+<ImageView
+    android:id="@+id/iv_action"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        tools:text="跳过"
+        android:textColor="#ffffff"
+        android:textSize="13sp"
+        android:background="@drawable/finish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
