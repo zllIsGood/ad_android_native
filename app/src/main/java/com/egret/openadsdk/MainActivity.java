@@ -846,7 +846,7 @@ public class MainActivity extends Activity {
                 Log.e("ExpressView", "render suc:" + (System.currentTimeMillis() - startTime));
                 //返回view的宽高 单位 dp
                 TToast.show(MainActivity.this, "渲染成功");
-                mBannerContainer.removeView(view);
+                mBannerContainer.removeView(bannerView);
                 bannerView = view;
                 Rect rect = new Rect();
                 getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
